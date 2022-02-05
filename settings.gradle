@@ -1,0 +1,10 @@
+rootProject.name = "ShopMultimoduleApp"
+include ':app'
+include ':data'
+include ':model'
+include ':core'
+include ':utils'
+include ':mainscreen'
+include ':mycart'
+include ':productdetails'
+include ':splashscreen'
