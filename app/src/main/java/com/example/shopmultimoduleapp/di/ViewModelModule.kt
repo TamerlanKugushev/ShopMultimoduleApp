@@ -8,8 +8,6 @@ import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val viewModelModule = module {
-    viewModel { MainScreenViewModel(get(), get()) }
-    viewModel { ProductDetailsViewModel(get(), get()) }
     viewModel { MainViewModel(get()) }
     viewModel { SplashViewModel(get()) }
 }

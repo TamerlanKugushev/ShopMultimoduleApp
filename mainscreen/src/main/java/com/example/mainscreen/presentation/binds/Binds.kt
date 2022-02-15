@@ -10,8 +10,8 @@ import com.example.mainscreen.presentation.listener.BestSellerItemListener
 import com.example.mainscreen.R
 import com.example.mainscreen.databinding.ItemBestSellerBinding
 import com.example.mainscreen.databinding.ItemHotSalesBinding
-import com.example.model.models.local.main.BestSellerDto
-import com.example.model.models.local.main.HomeStoreDto
+import com.example.mainscreen.data.model.local.BestSellerDto
+import com.example.mainscreen.data.model.local.HomeStoreDto
 import com.example.utils.convertIntToPriceForBestSeller
 
 internal fun bindHotSales(

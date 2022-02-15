@@ -1,7 +1,7 @@
 package com.example.productdetails.presentation.view_moldel
 
 import com.example.core.view_model.BaseViewModel
-import com.example.model.models.local.productdetails.ProductDetailsDto
+import com.example.productdetails.data.model.local.ProductDetailsDto
 import com.example.model.state.Result
 import com.example.productdetails.presentation.navigation.ProductDetailsNavigator
 import com.example.productdetails.domain.usecase.ProductDetailsUseCase

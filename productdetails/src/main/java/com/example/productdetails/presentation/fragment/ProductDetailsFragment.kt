@@ -11,7 +11,7 @@ import com.example.core.listener.BaseItemListener
 import com.example.core.fragment.BaseFragment
 import com.example.data.image_loader.ImageLoader
 import com.example.productdetails.presentation.view_moldel.ProductDetailsViewModel
-import com.example.model.models.local.productdetails.ProductDetailsDto
+import com.example.productdetails.data.model.local.ProductDetailsDto
 import com.example.productdetails.R
 import com.example.productdetails.databinding.FragmentProductDetailsBinding
 import com.example.productdetails.presentation.binds.bindProductDetails

@@ -1,6 +1,6 @@
 package com.example.productdetails.domain.usecase
 
-import com.example.model.models.local.productdetails.ProductDetailsDto
+import com.example.productdetails.data.model.local.ProductDetailsDto
 
 interface ProductDetailsUseCase {
 

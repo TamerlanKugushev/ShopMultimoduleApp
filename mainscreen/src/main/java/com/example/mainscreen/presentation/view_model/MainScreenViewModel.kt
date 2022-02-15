@@ -1,13 +1,13 @@
 package com.example.mainscreen.presentation.view_model
 
 import com.example.core.view_model.BaseViewModel
-import com.example.mainscreen.domain.usecase.MainUseCase
+import com.example.mainscreen.domain.usecase.MainScreenUseCase
 import com.example.mainscreen.presentation.navigation.MainScreenNavigator
-import com.example.model.models.local.main.MainDto
+import com.example.mainscreen.data.model.local.MainDto
 import com.example.model.state.Result
 
 class MainScreenViewModel(
-    private val useCase: MainUseCase,
+    private val useCase: MainScreenUseCase,
     private val navigator: MainScreenNavigator
 ) :
     BaseViewModel<MainDto>() {

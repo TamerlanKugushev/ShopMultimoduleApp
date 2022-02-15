@@ -41,6 +41,9 @@ object Versions {
 
     // Discrete ScrollView
     const val discreteScrollView = "1.5.1"
+
+    // Room
+    const val room_version = "2.4.1"
 }
 
 object Kotlin {
@@ -66,7 +69,8 @@ object Tests {
 }
 
 object DiscreteScrollView {
-    const val discreteScrollView = "com.yarolegovich:discrete-scrollview:${Versions.discreteScrollView}"
+    const val discreteScrollView =
+        "com.yarolegovich:discrete-scrollview:${Versions.discreteScrollView}"
 }
 
 object Retrofit {
@@ -120,4 +124,11 @@ object ViewBindingLibrary {
 object Glide {
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
     const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glideCompiler}"
+}
+
+object Room {
+    const val room = "androidx.room:room-runtime:${Versions.room_version}"
+    const val room_compiler = "androidx.room:room-compiler:${Versions.room_version}"
+    const val room_ktx = "androidx.room:room-ktx:${Versions.room_version}"
+    const val room_coroutines = "androidx.room:room-coroutines:${Versions.room_version}"
 }

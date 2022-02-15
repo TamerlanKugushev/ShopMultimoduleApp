@@ -20,9 +20,9 @@ import com.example.mainscreen.presentation.adapters.CategoriesRVAdapter
 import com.example.mainscreen.presentation.binds.bindBestSeller
 import com.example.mainscreen.presentation.binds.bindHotSales
 import com.example.mainscreen.presentation.listener.BestSellerItemListener
-import com.example.model.models.local.main.BestSellerDto
-import com.example.model.models.local.main.HomeStoreDto
-import com.example.model.models.local.main.MainDto
+import com.example.mainscreen.data.model.local.BestSellerDto
+import com.example.mainscreen.data.model.local.HomeStoreDto
+import com.example.mainscreen.data.model.local.MainDto
 import com.example.utils.PHONES_CATEGORY_ID
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import org.koin.android.ext.android.inject
