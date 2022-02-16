@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-
+    id 'kotlin-kapt'
 }
 
 dependencies {
@@ -42,6 +42,10 @@ dependencies {
     implementation ViewBindingLibrary.viewBinding
 
     implementation Cicerone.cicerone
+
+    implementation Room.room
+    implementation Room.room_ktx
+    kapt Room.room_compiler
 }
 
 repositories {

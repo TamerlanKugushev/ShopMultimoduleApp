@@ -1,22 +1,36 @@
 package com.example.mainscreen.data.repository
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import com.example.mainscreen.data.data_source.MainScreenDataSource
 import com.example.mainscreen.data.model.local.BestSellerDto
 import com.example.mainscreen.data.model.local.HomeStoreDto
 import com.example.mainscreen.data.model.local.MainDto
 import com.example.mainscreen.data.model.remote.BestSellerResponse
 import com.example.mainscreen.data.model.remote.HomeStoreResponse
 import com.example.mainscreen.data.model.remote.MainResponse
-import com.example.mainscreen.data.data_source.MainScreenDataSource
 import com.example.mainscreen.domain.repository.MainScreenRepository
 
 class MainScreenRepositoryImpl(
     private val dataSource: MainScreenDataSource,
+    private val context: Context
 ) :
     MainScreenRepository {
 
     override suspend fun getMain(): MainDto {
-        val responseMain = dataSource.getMain()
-        return mapToMain(responseMain)
+        return if (hasInternetConnection()) {
+            val entities = mapToMain(dataSource.getRemoteMain())
+            dataSource.insertMain(entities)
+            entities
+        } else {
+            dataSource.getLocalMain()
+        }
+
+
+//        val responseMain = dataSource.getRemoteMain()
+//        return mapToMain(responseMain)
     }
 
     private fun mapToMain(response: List<MainResponse>): MainDto {
@@ -52,4 +66,20 @@ class MainScreenRepositoryImpl(
                 picture = responseHomeStore.picture
             )
         }
+
+    @SuppressLint("NewApi")
+    private fun hasInternetConnection(): Boolean {
+        val connectivityManager = context.getSystemService(
+            Context.CONNECTIVITY_SERVICE
+        ) as ConnectivityManager
+        val activityNetwork = connectivityManager.activeNetwork ?: return false
+        val capabilities =
+            connectivityManager.getNetworkCapabilities(activityNetwork) ?: return false
+        return when {
+            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
+            else -> false
+        }
+    }
 }

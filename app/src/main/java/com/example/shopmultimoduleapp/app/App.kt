@@ -19,6 +19,7 @@ class App : Application() {
                 ciceroneModule,
                 navigationModule,
                 imageModule,
+                dataBaseModule,
                 myCartModule,
                 mainScreenModule,
                 productDetailsScreenModule

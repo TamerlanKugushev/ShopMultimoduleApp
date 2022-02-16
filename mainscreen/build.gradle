@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-parcelize'
+    id 'kotlin-kapt'
 }
 
 dependencies {
@@ -30,4 +31,8 @@ dependencies {
 
     implementation Retrofit.gson
     implementation Retrofit.converterGson
+
+    implementation Room.room
+    implementation Room.room_ktx
+    kapt Room.room_compiler
 }

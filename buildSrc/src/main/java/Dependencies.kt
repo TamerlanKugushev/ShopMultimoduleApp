@@ -130,5 +130,4 @@ object Room {
     const val room = "androidx.room:room-runtime:${Versions.room_version}"
     const val room_compiler = "androidx.room:room-compiler:${Versions.room_version}"
     const val room_ktx = "androidx.room:room-ktx:${Versions.room_version}"
-    const val room_coroutines = "androidx.room:room-coroutines:${Versions.room_version}"
 }
